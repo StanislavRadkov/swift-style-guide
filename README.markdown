@@ -140,7 +140,7 @@ class Circle: Shape {
         set {
             radius = newValue / 2
         }
-  }
+    }
 
     init(x: Int, y: Int, radius: Double) {
         self.x = x
@@ -191,7 +191,7 @@ class BoardLocation {
         let closure = { () -> () in
             println(self.row)
         }
-  }
+    }
 }
 ```
 
