@@ -108,25 +108,14 @@ If you need to expose a Swift type for use within Objective-C you can provide a 
 
 ## Spacing
 
-* Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode.
+* Indent using 4 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode.
 * Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
 
 **Preferred:**
 ```swift
 if user.isHappy {
-  //Do something
-} else {
-  //Do something else
-}
-```
-
-**Not Preferred:**
-```swift
-if user.isHappy
-{
     //Do something
-}
-else {
+} else {
     //Do something else
 }
 ```
@@ -146,38 +135,38 @@ Here's an example of a well-styled class definition:
 
 ```swift
 class Circle: Shape {
-  var x: Int, y: Int
-  var radius: Double
-  var diameter: Double {
-    get {
-      return radius * 2
+    var x: Int, y: Int
+    var radius: Double
+    var diameter: Double {
+        get {
+            return radius * 2
+        }
+        set {
+            radius = newValue / 2
+        }
+  }
+
+    init(x: Int, y: Int, radius: Double) {
+        self.x = x
+        self.y = y
+        self.radius = radius
     }
-    set {
-      radius = newValue / 2
+
+    convenience init(x: Int, y: Int, diameter: Double) {
+        self.init(x: x, y: y, radius: diameter / 2)
     }
-  }
 
-  init(x: Int, y: Int, radius: Double) {
-    self.x = x
-    self.y = y
-    self.radius = radius
-  }
+    func describe() -> String {
+        return "I am a circle at \(centerString()) with an area of \(computeArea())"
+    }
 
-  convenience init(x: Int, y: Int, diameter: Double) {
-    self.init(x: x, y: y, radius: diameter / 2)
-  }
+    override func computeArea() -> Double {
+        return M_PI * radius * radius
+    }
 
-  func describe() -> String {
-    return "I am a circle at \(centerString()) with an area of \(computeArea())"
-  }
-
-  override func computeArea() -> Double {
-    return M_PI * radius * radius
-  }
-
-  private func centerString() -> String {
-    return "(\(x),\(y))"
-  }
+    private func centerString() -> String {
+        return "(\(x),\(y))"
+    }
 }
 ```
 
@@ -197,15 +186,15 @@ Use `self` when required to differentiate between property names and arguments i
 
 ```swift
 class BoardLocation {
-  let row: Int, column: Int
+    let row: Int, column: Int
 
-  init(row: Int,column: Int) {
-    self.row = row
-    self.column = column
+    init(row: Int,column: Int) {
+        self.row = row
+        self.column = column
     
-    let closure = { () -> () in
-      println(self.row)
-    }
+        let closure = { () -> () in
+            println(self.row)
+        }
   }
 }
 ```
@@ -216,7 +205,7 @@ Keep short function declarations on one line including the opening brace:
 
 ```swift
 func reticulateSplines(spline: [Double]) -> Bool {
-  // reticulate code goes here
+    // reticulate code goes here
 }
 ```
 
@@ -225,7 +214,7 @@ For functions with long signatures, add line breaks at appropriate points and ad
 ```swift
 func reticulateSplines(spline: [Double], adjustmentFactor: Double,
     translateConstant: Int, comment: String) -> Bool {
-  // reticulate code goes here
+    // reticulate code goes here
 }
 ```
 
@@ -236,7 +225,7 @@ Use trailing closure syntax wherever possible. In all cases, give the closure pa
 
 ```swift
 return SKAction.customActionWithDuration(effect.duration) { node, elapsedTime in 
-  // more code goes here
+    // more code goes here
 }
 ```
 
@@ -244,7 +233,7 @@ For single-expression closures where the context is clear, use implicit returns:
 
 ```swift
 attendeeList.sort { a, b in
-  a > b
+    a > b
 }
 ```
 
@@ -289,7 +278,7 @@ Use optional binding when it's more convenient to unwrap once and perform multip
 
 ```swift
 if let view = self.optionalView {
-  // do many things with view
+    // do many things with view
 }
 ```
 
@@ -357,23 +346,23 @@ Prefer the `for-in` style of `for` loop over the `for-condition-increment` style
 **Preferred:**
 ```swift
 for _ in 0..<3 {
-  println("Hello three times")
+    println("Hello three times")
 }
 
 for person in attendeeList {
-  // do something
+    // do something
 }
 ```
 
 **Not Preferred:**
 ```swift
 for var i = 0; i < 3; i++ {
-  println("Hello three times")
+    println("Hello three times")
 }
 
 for var i = 0; i < attendeeList.count; i++ {
-  let person = attendeeList[i]
-  // do something
+    let person = attendeeList[i]
+    // do something
 }
 ```
 
@@ -412,48 +401,11 @@ var color = "red"
 var colour = "red"
 ```
 
-## Smiley Face
-
-Smiley faces are a very prominent style feature of the raywenderlich.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket `]` is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis `)` creates a half-hearted smile, and thus is not preferred.
-
-**Preferred:**
-```
-:]
-```
-
-**Not Preferred:**
-```
-:)
-```  
-
-
 ## Credits
 
-This style guide is a collaborative effort from the most stylish raywenderlich.com team members: 
+Forked from: https://github.com/raywenderlich/swift-style-guide
 
-* [Soheil Moayedi Azarpour](https://github.com/moayes)
-* [Scott Berrevoets](https://github.com/Scott90)
-* [Eric Cerney](https://github.com/ecerney)
-* [Sam Davies](https://github.com/sammyd)
-* [Evan Dekhayser](https://github.com/edekhayser)
-* [Jean-Pierre Distler](https://github.com/pdistler)
-* [Colin Eberhardt](https://github.com/ColinEberhardt)
-* [Greg Heo](https://github.com/gregheo)
-* [Matthijs Hollemans](https://github.com/hollance)
-* [Erik Kerber](https://github.com/eskerber)
-* [Christopher LaPollo](https://github.com/elephantronic)
-* [Andy Pereira](https://github.com/macandyp)
-* [Ryan Nystrom](https://github.com/rnystrom)
-* [Cesare Rocchi](https://github.com/funkyboy)
-* [Ellen Shapiro](https://github.com/designatednerd)
-* [Marin Todorov](https://github.com/icanzilb)
-* [Chris Wagner](https://github.com/cwagdev)
-* [Ray Wenderlich](https://github.com/rwenderlich)
-* [Jack Wu](https://github.com/jackwu95)
-
-Hat tip to [Nicholas Waynik](https://github.com/ndubbs) and the [Objective-C Style Guide](https://github.com/raywenderlich/objective-c-style-guide) team!
-
-We also drew inspiration from Apple’s reference material on Swift:
+Apple’s reference material on Swift:
 
 * [The Swift Programming Language](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/index.html)
 * [Using Swift with Cocoa and Objective-C](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/index.html)
