@@ -22,9 +22,7 @@ This style guide is based on the raywenderlich.com Style Guide (https://github.c
 * [Semicolons](#semicolons)
 * [Brackets](#brackets)
 * [Language](#language)
-
 * [Credits](#credits)
-
 
 ## Naming
 
