@@ -20,8 +20,9 @@ This style guide is based on the raywenderlich.com Style Guide (https://github.c
   * [Syntactic Sugar](#syntactic-sugar)
 * [Control Flow](#control-flow)
 * [Semicolons](#semicolons)
+* [Brackets](#brackets)
 * [Language](#language)
-* [Smiley Face](#smiley-face)
+
 * [Credits](#credits)
 
 
@@ -362,6 +363,17 @@ for var i = 0; i < attendeeList.count; i++ {
 }
 ```
 
+## Brackets
+
+Swift does not require brackets around if conditions.
+
+**Preferred:**
+```swift
+var a = 3
+if a > 1 {
+    println("a is greater than 1")
+}
+```
 
 ## Semicolons
 
