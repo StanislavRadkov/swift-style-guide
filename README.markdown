@@ -35,8 +35,8 @@ Use descriptive names with camel case for classes, methods, variables, etc. Clas
 let MaximumWidgetCount = 100
 
 class WidgetContainer {
-  var widgetButton: UIButton
-  let widgetHeightPercentage = 0.85
+    var widgetButton: UIButton
+    let widgetHeightPercentage = 0.85
 }
 ```
 
@@ -46,8 +46,8 @@ class WidgetContainer {
 let MAX_WIDGET_COUNT = 100
 
 class app_widgetContainer {
-  var wBut: UIButton
-  let wHeightPct = 0.85
+    var wBut: UIButton
+    let wHeightPct = 0.85
 }
 ```
 
@@ -67,8 +67,8 @@ timedAction(delay: 1.0, perform: someOtherAction)
 For methods, follow the standard Apple convention of referring to the first parameter in the method name:
 ```swift
 class Guideline {
-  func combineWithString(incoming: String, options: Dictionary?) { ... }
-  func upvoteBy(amount: Int) { ... }
+    func combineWithString(incoming: String, options: Dictionary?) { ... }
+    func upvoteBy(amount: Int) { ... }
 }
 ```
 
@@ -97,7 +97,7 @@ If you need to expose a Swift type for use within Objective-C you can provide a 
 
 ```swift
 @objc (RWTChicken) class Chicken {
-   ...
+    ...
 }
 ```
 
