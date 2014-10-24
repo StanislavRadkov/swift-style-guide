@@ -361,6 +361,20 @@ for var i = 0; i < attendeeList.count; i++ {
 }
 ```
 
+When you have an `if` statement with a single line clause that is short. Prefer writing the complete statement in a single line.
+
+**Preferred:**
+```swift
+if item == nil { return }
+```
+
+**Not Preferred:**
+```swift
+if item == nil {
+    return
+}
+```
+
 ## Brackets
 
 Swift does not require brackets around if conditions.
