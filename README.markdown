@@ -212,7 +212,14 @@ func reticulateSplines(spline: [Double], adjustmentFactor: Double,
     // reticulate code goes here
 }
 ```
+For functions that do not provide a result value to its caller do not specify the return type as Void:
 
+**Preferred:**
+```swift
+func setAge(age: Int) {
+    self.age = age
+}
+```
 
 ## Closures
 
