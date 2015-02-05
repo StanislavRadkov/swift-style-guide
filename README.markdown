@@ -50,6 +50,26 @@ class app_widgetContainer {
 }
 ```
 
+Private properties and constants of classes should be camel cased and prefixed with underscore.
+
+**Preferred:**
+
+```swift
+class WidgetContainer {
+    private let _maxWidgetsCount = 5
+    private var _positionX: Int?
+}
+```
+
+**Not Preferred:**
+
+```swift
+class WidgetContainer {
+    private let MaxWidgetsCount = 5
+    private var PositionX: Int?
+}
+```
+
 For functions and init methods, prefer named parameters for all arguments unless the context is very clear. Include external parameter names if it makes function calls more readable.
 
 ```swift
