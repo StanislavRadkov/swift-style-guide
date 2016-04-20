@@ -233,7 +233,7 @@ class BoardLocation {
         self.column = column
     
         let closure = {
-            print(self.row)
+            println(self.row)
         }
     }
 ```
@@ -445,8 +445,6 @@ let centerPoint = CGPoint(x: 96, y: 42)
 let bounds = CGRectMake(40, 20, 120, 80)
 let centerPoint = CGPointMake(96, 42)
 ```
-
-Prefer the struct-scope constants `CGRect.infinite`, `CGRect.null`, etc. over global constants `CGRectInfinite`, `CGRectNull`, etc. For existing variables, you can use the shorter `.zero`.
 
 ### Type Inference
 
