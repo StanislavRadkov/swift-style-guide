@@ -91,8 +91,8 @@ For methods, follow the standard Apple convention of referring to the first para
 
 ```swift
 class Counter {
-  func combineWith(otherCounter: Counter, options: Dictionary?) { ... }
-  func incrementBy(amount: Int) { ... }
+    func combineWith(otherCounter: Counter, options: Dictionary?) { ... }
+    func incrementBy(amount: Int) { ... }
 }
 ```
 
@@ -102,10 +102,10 @@ Use UpperCamelCase for enumeration values:
 
 ```swift
 enum Shape {
-  case Rectangle
-  case Square
-  case Triangle
-  case Circle
+    case Rectangle
+    case Square
+    case Triangle
+    case Circle
 }
 ```
 
@@ -228,7 +228,7 @@ Use `self` when required to differentiate between property names and arguments i
 class BoardLocation {
     let row: Int, column: Int
 
-  init(row: Int, column: Int) {
+    init(row: Int, column: Int) {
         self.row = row
         self.column = column
     
@@ -247,24 +247,24 @@ Also, don't forget the `// MARK: -` comment to keep things well-organized!
 **Preferred:**
 ```swift
 class MyViewcontroller: UIViewController {
-  // class stuff here
+    // class stuff here
 }
 
 // MARK: - UITableViewDataSource
 extension MyViewcontroller: UITableViewDataSource {
-  // table view data source methods
+    // table view data source methods
 }
 
 // MARK: - UIScrollViewDelegate
 extension MyViewcontroller: UIScrollViewDelegate {
-  // scroll view delegate methods
+    // scroll view delegate methods
 }
 ```
 
 **Not Preferred:**
 ```swift
 class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
-  // all methods
+    // all methods
 }
 ```
 
@@ -275,16 +275,16 @@ For conciseness, if a computed property is read-only, omit the get clause. The g
 **Preferred:**
 ```swift
 var diameter: Double {
-  return radius * 2
+    return radius * 2
 }
 ```
 
 **Not Preferred:**
 ```swift
 var diameter: Double {
-  get {
-    return radius * 2
-  }
+    get {
+        return radius * 2
+    }
 }
 ```
 
@@ -322,28 +322,28 @@ Use trailing closure syntax only if there's a single closure expression paramete
 **Preferred:**
 ```swift
 UIView.animateWithDuration(1.0) {
-  self.myView.alpha = 0
+    self.myView.alpha = 0
 }
 
 UIView.animateWithDuration(1.0,
-  animations: {
-    self.myView.alpha = 0
-  },
-  completion: { finished in
-    self.myView.removeFromSuperview()
-  }
+    animations: {
+        self.myView.alpha = 0
+    },
+    completion: { finished in
+        self.myView.removeFromSuperview()
+    }
 )
 ```
 
 **Not Preferred:**
 ```swift
 UIView.animateWithDuration(1.0, animations: {
-  self.myView.alpha = 0
+    self.myView.alpha = 0
 })
 
 UIView.animateWithDuration(1.0,
-  animations: {
-    self.myView.alpha = 0
+    animations: {
+        self.myView.alpha = 0
   }) { f in
     self.myView.removeFromSuperview()
 }
@@ -399,7 +399,7 @@ Use optional binding when it's more convenient to unwrap once and perform multip
 
 ```swift
 if let textContainer = self.textContainer {
-  // do many things with textContainer
+    // do many things with textContainer
 }
 ```
 
@@ -414,7 +414,7 @@ var volume: Double?
 
 // later on...
 if let subview = subview, volume = volume {
-  // do something with unwrapped subview and volume
+    // do something with unwrapped subview and volume
 }
 ```
 
@@ -424,9 +424,9 @@ var optionalSubview: UIView?
 var volume: Double?
 
 if let unwrappedSubview = optionalSubview {
-  if let realVolume = volume {
-    // do something with unwrappedSubview and realVolume
-  }
+    if let realVolume = volume {
+        // do something with unwrappedSubview and realVolume
+    }
 }
 ```
 
@@ -559,47 +559,6 @@ let swift = "not a scripting language";
 ```
 
 **NOTE**: Swift is very different to JavaScript, where omitting semicolons is [generally considered unsafe](http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)
-
-## Language
-Use US English spelling to match Apple's API.
-
-**Preferred:**
-```swift
-var color = "red"
-```
-
-**Not Preferred:**
-```swift
-var colour = "red"
-```
-
-
-## Copyright Statement
-
-The following copyright statement should be included at the top of every source
-file:
-
-    /**
-     * Copyright (c) 2016 Razeware LLC
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
 
 ## Credits
 
