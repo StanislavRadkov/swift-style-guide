@@ -35,7 +35,7 @@ Use descriptive names with camel case for classes, methods, variables, etc. Type
 **Preferred:**
 
 ```swift
-private let maximumWidgetCount = 100
+let maximumWidgetCount = 100
 
 class WidgetContainer {
     var widgetButton: UIButton
