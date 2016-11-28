@@ -1,6 +1,7 @@
-# Swift Style Guide
+# Swift Style Guide 
 
-This style guide is based on the raywenderlich.com Style Guide (https://github.com/raywenderlich/swift-style-guide)
+This style guide covers Swift version 1.2
+It is based on the raywenderlich.com Style Guide (https://github.com/raywenderlich/swift-style-guide)
 
 ## Table of Contents
 
